@@ -5,30 +5,19 @@ import MainContent from "./components/MainContent"
 import Navbar from "./components/Navbar"
 import Header from "./components/Header"
 import './Style.css';
+import contents from "./data/contentData"
+
 
 function App() {
+  const contentComponent = contents.map(element =>
+    <MainContent key={element.id} item={element} />
+  )
   return (
     <div className="App">
-      {/* <ul>
-        <li>
-          <input type="checkbox" id="checkitem1"></input>
-          <label for="checkitem1">Check Item1</label></li>
-        <li>
-          <input type="checkbox" id="checkitem2"></input>
-          <label for="checkitem2">Check Item2</label>
-        </li>
-        <li>
-          <input type="checkbox" id="checkitem3"></input>
-          <label for="checkitem3">Check Item3</label>
-        </li>
-      </ul> */}
       <Header />
       <Navbar />
       <div className="todo-list">
-        <MainContent />
-        <MainContent />
-        <MainContent />
-        <MainContent />
+        {contentComponent}
       </div>
       <Footer />
     </div>
