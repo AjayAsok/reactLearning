@@ -1,12 +1,21 @@
 import React from "react"
+import contents from "../data/contentData"
 
 let style = {
     "color": "red"
 }
-function MainContent(params) {
-    if (style) {
-        style.backgroundColor = "blue";
+class MainContent extends React.Component {
+    constructor() {
+        super();
     }
-    return (<div className="todo-item"><input type="checkbox" checked={params.item.completed} /><p>{params.item.text}</p></div>)
+    changed() {
+        alert("Changed");
+    }
+    render() {
+        if (style) {
+            style.backgroundColor = "blue";
+        }
+        return (<div className="todo-item"><input type="checkbox" checked={this.props.item.completed} onChange={this.changed} /><p>{this.props.item.text}</p></div>)
+    }
 }
 export default MainContent
