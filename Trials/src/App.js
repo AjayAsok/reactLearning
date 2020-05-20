@@ -6,15 +6,25 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      answer: "yes"
+      answer: "yes",
+      count: 0
     }
+    this.changeValue = this.changeValue.bind(this)
   }
   textGenerator() {
     return "Hello React World!!"
   }
-
+  changeValue() {
+    this.setState(prevState => {
+      return { count: prevState.count + 1 }
+    }
+    )
+  }
   render() {
     return (<div>
+      <h1>{this.state.count}</h1>
+      <button onClick={this.changeValue}>Change!</button>
+      <hr /><hr />
       <LoginComponent />
       <h1>Is the state important? {this.state.answer} </h1>
       <Header userName="user" />
@@ -42,5 +52,6 @@ class LoginComponent extends React.Component {
     return (<h1>You are Currently logged{this.state.isLoggedIn ? "in" : "out"}</h1>)
   }
 }
+
 
 export default App;
