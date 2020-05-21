@@ -15,7 +15,8 @@ class MainContent extends React.Component {
         if (style) {
             style.backgroundColor = "blue";
         }
-        return (<div className="todo-item"><input type="checkbox" checked={this.props.item.completed} onChange={this.changed} /><p>{this.props.item.text}</p></div>)
+        return (<div className="todo-item"><input type="checkbox" checked={this.props.item.completed}
+            onChange={() => this.props.handleChange(this.props.item.id)} /><p>{this.props.item.text}</p></div>)
     }
 }
 export default MainContent

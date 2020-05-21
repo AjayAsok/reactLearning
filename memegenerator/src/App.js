@@ -14,10 +14,24 @@ class App extends React.Component {
     this.state = {
       todoList: contents
     }
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(id) {
+    // take a look at the entire thing
+    this.setState(prevState => {
+      let newList = prevState.todoList.map(content => {
+        if (content.id === id) {
+          content.completed = !content.completed
+        }
+        return content
+      })
+      console.log(newList)
+      return { todoList: newList }
+    })
   }
   render() {
     let contentComponent = this.state.todoList.map(element =>
-      <MainContent key={element.id} item={element} />
+      <MainContent key={element.id} item={element} handleChange={this.handleChange} />
     )
     return (
       <div className="App">
