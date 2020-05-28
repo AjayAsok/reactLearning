@@ -7,16 +7,16 @@ class Login extends React.Component {
         this.state = {
             isLoggedIn: true
         }
-        this.loginHandler = this.loginHandler.bind(this)
+        this.handleLogin = this.handleLogin.bind(this)
     }
     render() {
         return (<div>
-            <h1>You are Currently logged{this.state.isLoggedIn ? "in" : "out"}</h1>
-            <button onClick={this.loginHandler}>{this.state.isLoggedIn ? "Logout" : "Login"}</button>
+            <h1>You are Currently logged{this.state.isLoggedIn ? " in" : " out"}</h1>
+            <button onClick={this.handleLogin}>{this.state.isLoggedIn ? "Logout" : "Login"}</button>
         </div>
         )
     }
-    loginHandler() {
+    handleLogin() {
         this.setState(prevState => {
             return {
                 isLoggedIn: !this.state.isLoggedIn

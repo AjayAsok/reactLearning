@@ -25,7 +25,6 @@ class App extends React.Component {
         }
         return content
       })
-      console.log(newList)
       return { todoList: newList }
     })
   }
