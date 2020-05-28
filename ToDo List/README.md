@@ -1,3 +1,6 @@
+# I have learned react from https://www.youtube.com/watch?v=DLX62G4lc44&t=4705s
+### ToDo List is an application to check the listed activities.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
