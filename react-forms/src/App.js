@@ -13,7 +13,7 @@ class App extends React.Component {
     this.changeHandler = this.changeHandler.bind(this)
   }
   changeHandler(event) {
-    let {name, value} = event.target
+    let { name, value } = event.target
     this.setState({
       [name]: value
     })
@@ -24,8 +24,17 @@ class App extends React.Component {
     return (<div><input type="text" name="firstName" placeholder="First Name" onChange={this.changeHandler} />
       <input type="text" name="lastName" placeholder="Last Name" onChange={this.changeHandler} />
       <br /><br />
-      <input type="text" value={this.state.firstName} name="firstName" placeholder="First Name" onChange={this.changeHandler} />
-      <input type="text" value={this.state.lastName} name="lastName" placeholder="Last Name" onChange={this.changeHandler} />
+      <input type="text"
+        value={this.state.firstName}
+        name="firstName"
+        placeholder="First Name"
+        onChange={this.changeHandler} />
+
+      <input type="text"
+        value={this.state.lastName}
+        name="lastName"
+        placeholder="Last Name"
+        onChange={this.changeHandler} />
       <p>{this.state.firstName + " " + this.state.lastName}</p>
     </div>)
   }
