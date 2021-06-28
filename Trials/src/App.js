@@ -35,11 +35,16 @@ function StateChanger() {
   useEffect(() => {
     alert(`status: ${status}`)
   }, [status])
-  const [val1, setVal1] = useState("")
+  const [val1, setVal1] = useState({})
   const [val2, setVal2] = useState("")
 
   useEffect(() => {
-    alert(val1)
+    fetch("http://localhost:3100/students").then(response => response.json())
+      .then(responseData => {
+        this.setState({
+          responseData: responseData
+        })
+      })
   }, [val1])
   useEffect(() => {
     alert(val2)
